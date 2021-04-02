@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rock Paper Scissors, classic game">
+    <meta name="author" content="Alejandro Bastor-Alvarez" />
+    <title>Rock Paper Scissors - RPT</title>
+    <link rel="shortcut icon" href="asset/images/game.png" type="image/x-icon">
+    <link rel="stylesheet" href="asset/css/styles.css">
+</head>
+<body id="body" class="">
+    <!--Landing page-->
+    <section class="principal" id="principal">
+        <section id="container" class="container blue">
+            <form action="" id="form">
+            <h1 class="animated2 bounce">WELCOME !!!!</h1>
+            <input maxlength="10" required type="text" name="name" id="name" placeholder="Player's name">
+            <select name="gender" id="gender">
+                <option required hidden selected>Boy / Girl</option>
+                <option value="boy">Boy</option>
+                <option value="girl">Girl</option>
+            </select>
+            <select name="color" id="color">
+                <option required hidden selected>Please select a color</option>
+                <option value="blue">Blue</option>
+                <option value="red">Red</option>
+                <option value="black">Black</option>
+                <option value="purple">Purple</option>
+            </select>
+            <button class="animated pulse" onclick="getData()" type="button">PLAY !!!</button>
+        </form>
+        </section>
+    </section>
+    <!--Game Page-->
+    <!-- Header-->
+    <header>
+        <nav>
+            <a href="index.html"><img src="asset/images/game.png" alt="game"></a>
+            <h1> Rock - Paper - Scissor Game </h1>
+        </nav>
+    </header>
+    <!-- Scoreboard -->
+    <section class="scoreboard shadow">
+        <div id="user-label" class="user-label badge animated ">
+            <div id="img"><img src="asset/images/boy.png" alt="Boy"></div>
+            <h3 id="player">Player</h3>
+        </div>
+        <div id="pc-label" class="pc-label badge animated"><img src="asset/images/cpu.png" alt="CPU">
+            <h3>CPU</h3>
+        </div>
+        <span id="my_score">0 </span> <span class="puntos">:</span>
+        <span id="computer_score">0</span>
+    </section>
+
+
+    <main id="main">
+        <button class="btn-circle btn-paper pick" type="button" name="button" data-choice="paper">
+            <span class="wrapper">
+                <img src="asset/images/paper.png" alt="paper icon">
+            </span>
+        </button>
+    
+        <button class="btn-circle btn-scissors pick" type="button" name="button" data-choice="scissors">
+            <span class="wrapper">
+                <img src="asset/images/scissors.png" alt="scissors icon">
+            </span>
+        </button>
+    
+        <button class="btn-circle btn-rock pick" type="button" name="button" data-choice="rock">
+            <span class="wrapper">
+                <img src="asset/images/rock.png" alt="rock icon">
+            </span>
+        </button>
+    </main>
+
+    <button id="open" class="btn-rules" type="button" name="button">Rules</button>
+    <div class="rules-modal" id="modal">
+        <img src="asset/images/game-rules.svg" alt="rules">
+        <button id="close" type="button" name="button">
+            <img src="asset/images/icon-close.svg" alt="close">
+        </button>
+    </div>
+    <div class="rules-container"></div>
+    
+    </div>
+
+    <div class="selection" id="selection">
+        <div class="user_choice">
+          <h2>You picked</h2>
+          <button class="btn-circle btn-paper" id="user_select" type="button" name="button">
+            <span class="wrapper">
+              <img src="asset/images/paper.png" alt="paper icon">
+            </span>
+          </button>
+        </div>
+    
+        <div class="result-text">
+          <h1><span id="win">win</span></h1>
+          <button class="btn-reset" id="reset" type="button" name="button">play again</button>
+        </div>
+    
+        <div class="computer_choice">
+          <h2>The CPU picked</h2>
+          <button class="btn-circle btn-rock" id="computer_select" type="button" name="button">
+            <span class="wrapper">
+              <img src="asset/images/rock.png" alt="rock icon">
+            </span>
+          </button>
+        </div>
+    </div>
+
+
+    
+     
+   
+    <section class="colores">   
+    </section>
+   
+      <!-- Footer section  --> 
+      <footer>
+        <div id="socialContainer">
+            <a href="https://www.twitter.com/"><img src="asset/images/twitter.png" alt="twitter"></a>
+            <a href="https://www.instagram.com/"><img src="asset/images/instagram.png" alt="instagram"></a>
+            <a href="https://www.facebook.com/"><img src="asset/images/facebook.png" alt="instagram"></a>
+            <a href="https://github.com/ajba1973"><img src="asset/images/github.png" alt="github"></a>
+            <p>Copyright 2021 Alejandro Bastor-Alvarez</p>
+        </div>
+
+    </footer> 
+    
+
+    <script src="asset/js/main.js"></script>
+</body>
+</html>
