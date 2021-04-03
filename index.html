@@ -2,135 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rock Paper Scissors, classic game">
-    <meta name="author" content="Alejandro Bastor-Alvarez" />
-    <title>Rock Paper Scissors - RPT</title>
-    <link rel="shortcut icon" href="asset/images/game.png" type="image/x-icon">
-    <link rel="stylesheet" href="asset/css/styles.css">
+    <meta name="description" content="El clásico juego de Piedra Papel y Tijera">
+    <meta name="author" content="Carlos Córdova" />
+    <meta property="og:title" content="Piedra, Papel y Tijera">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="El clásico juego de Piedra Papel y Tijera">
+    <meta property="og:image" content="images/fondo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/juego.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Piedra Papel Tijera</title>
 </head>
-<body id="body" class="">
-    <!--Landing page-->
-    <section class="principal" id="principal">
-        <section id="container" class="container blue">
-            <form action="" id="form">
-            <h1 class="animated2 bounce">WELCOME !!!!</h1>
-            <input maxlength="10" required type="text" name="name" id="name" placeholder="Player's name">
-            <select name="gender" id="gender">
-                <option required hidden selected>Boy / Girl</option>
-                <option value="boy">Boy</option>
-                <option value="girl">Girl</option>
+<body id="body" class="">   
+     <section class="principal" id="principal">
+     <section id="contenedor" class="contenedor azul">
+         <h1 class="animated2 bounce">
+             BIENVENID@
+         </h1>
+         <form action="" id="form">
+            <input maxlength="10" required type="text" name="nombre" id="nombre" placeholder="Tu Nombre">
+            <select name="genero" id="genero">
+                <option required hidden selected>Elíge tu género</option>
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
             </select>
             <select name="color" id="color">
-                <option required hidden selected>Please select a color</option>
-                <option value="blue">Blue</option>
-                <option value="red">Red</option>
-                <option value="black">Black</option>
-                <option value="purple">Purple</option>
+                <option required hidden selected>Elíge un color</option>
+                <option value="azul">Azul</option>
+                <option value="rojo">Rojo</option>
+                <option value="negro">Negro</option>
+                <option value="morado">Morado</option>
             </select>
-            <button class="animated pulse" onclick="getData()" type="button">PLAY !!!</button>
-        </form>
-        </section>
+            <button class="animated pulse" onclick="getData()" type="button">JUGAR</button>
+         </form>         
+     </section>
     </section>
-    <!--Game Page-->
-    <!-- Header-->
     <header>
         <nav>
-            <a href="index.html"><img src="asset/images/game.png" alt="game"></a>
-            <h1> Rock - Paper - Scissor Game </h1>
+         <img src="images/juego.png" alt="Juego"> 
+         <h1> Piedra - Papel - Tijera </h1> 
         </nav>
-    </header>
-    <!-- Scoreboard -->
-    <section class="scoreboard shadow">
-        <div id="user-label" class="user-label badge animated ">
-            <div id="img"><img src="asset/images/boy.png" alt="Boy"></div>
-            <h3 id="player">Player</h3>
-        </div>
-        <div id="pc-label" class="pc-label badge animated"><img src="asset/images/cpu.png" alt="CPU">
-            <h3>CPU</h3>
-        </div>
-        <span id="my_score">0 </span> <span class="puntos">:</span>
-        <span id="computer_score">0</span>
+     </header>
+     <section class="marcador sombra">
+        <div id="user-label" class="user-label badge animated "><div id="img"><img src="images/man.png" alt="Man"></div> <h3 id="Usuario">Usuario</h3></div>
+        <div id="pc-label" class="pc-label badge animated"><img src="images/robot.png" alt="Robot"><h3>Robot</h3></div>
+        <span id="user-score">0 </span> <span class="puntos">:</span>
+        <span id="pc-score">0</span>
+    
     </section>
 
+    <section class="opcionesCpu">
+        <div class="cpuResult sombra" id="rocaResult">
+            <img src="images/arrow2.png" alt="Roca">
+        </div>
+        <div class="choice sombra" id="papelResult">
+            <img id="IAimg" src="images/1.png" alt="cpuplayer">
+        </div>
+        <div class="choice sombra" id="tijeraResult">
+            <img src="images/question.png" alt="Tijera">
+        </div>
+    </section>   
+    <div class="result">
 
-    <main id="main">
-        <button class="btn-circle btn-paper pick" type="button" name="button" data-choice="paper">
-            <span class="wrapper">
-                <img src="asset/images/paper.png" alt="paper icon">
-            </span>
-        </button>
-    
-        <button class="btn-circle btn-scissors pick" type="button" name="button" data-choice="scissors">
-            <span class="wrapper">
-                <img src="asset/images/scissors.png" alt="scissors icon">
-            </span>
-        </button>
-    
-        <button class="btn-circle btn-rock pick" type="button" name="button" data-choice="rock">
-            <span class="wrapper">
-                <img src="asset/images/rock.png" alt="rock icon">
-            </span>
-        </button>
-    </main>
-
-    <button id="open" class="btn-rules" type="button" name="button">Rules</button>
-    <div class="rules-modal" id="modal">
-        <img src="asset/images/game-rules.svg" alt="rules">
-        <button id="close" type="button" name="button">
-            <img src="asset/images/icon-close.svg" alt="close">
-        </button>
-    </div>
-    <div class="rules-container"></div>
-    
+        <p id="infoText">Esperando elección...</p>
     </div>
 
-    <div class="selection" id="selection">
-        <div class="user_choice">
-          <h2>You picked</h2>
-          <button class="btn-circle btn-paper" id="user_select" type="button" name="button">
-            <span class="wrapper">
-              <img src="asset/images/paper.png" alt="paper icon">
-            </span>
-          </button>
+    <section class="opciones">
+        <div class="choice sombra" id="roca" >
+            <img id="piedra" class="btnSelDefault" onclick="comprobarResultado('piedra')" src="images/1.png" alt="Roca">
         </div>
-    
-        <div class="result-text">
-          <h1><span id="win">win</span></h1>
-          <button class="btn-reset" id="reset" type="button" name="button">play again</button>
+        <div class="choice sombra" id="papel">
+            <img id="papel" class="btnSelDefault" onclick="comprobarResultado('papel')" src="images/2.png" alt="Papel">
         </div>
-    
-        <div class="computer_choice">
-          <h2>The CPU picked</h2>
-          <button class="btn-circle btn-rock" id="computer_select" type="button" name="button">
-            <span class="wrapper">
-              <img src="asset/images/rock.png" alt="rock icon">
-            </span>
-          </button>
+        <div class="choice sombra" id="tijera">
+            <img id="tijeras" class="btnSelDefault" onclick="comprobarResultado('tijeras')" src="images/3.png" alt="Tijera">
         </div>
-    </div>
-
-
-    
-     
-   
-    <section class="colores">   
     </section>
-   
-      <!-- Footer section  --> 
-      <footer>
-        <div id="socialContainer">
-            <a href="https://www.twitter.com/"><img src="asset/images/twitter.png" alt="twitter"></a>
-            <a href="https://www.instagram.com/"><img src="asset/images/instagram.png" alt="instagram"></a>
-            <a href="https://www.facebook.com/"><img src="asset/images/facebook.png" alt="instagram"></a>
-            <a href="https://github.com/ajba1973"><img src="asset/images/github.png" alt="github"></a>
-            <p>Copyright 2021 Alejandro Bastor-Alvarez</p>
-        </div>
+	
+	<!-- Banner Wins -->
+    <div id="btnRetryDiv" class="bannerHide">
+        <p id="btnRetry" style="margin: 0;" onclick="">Nueva partida</p>
+    </div>
 
-    </footer> 
-    
+    <section class="colores">
 
-    <script src="asset/js/main.js"></script>
+    </section>
+     <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,38 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@400;500;700&display=swap');
-
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    
 }
-
 body{    
     min-height: 100vh;
     color: white;
-    font-family: Grandstander, cursive;
-  
+    font-family: 'Grandstander', cursive;
 }
-
-/*------------------- Colors */
-
-.black {
+.negro {
     background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
     background-blend-mode: multiply,multiply;
 }
-.blue {
+.azul {
     background-image: linear-gradient( to top, #ABDCFF 0%, #0396FF 70%);
     background-repeat: no-repeat;
 }
-.red {
+.rojo {
     background-image: linear-gradient(to top, #ff8a8a 0%, #f5576c 100%);
 }
-.purple {
+.morado {
     background-color: #0cbaba;
     background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
-}
 
-/*------------------- Nav */
+}
 nav {
     display: flex;
     align-items: center;
@@ -43,13 +34,10 @@ nav {
 nav img {
     margin-right: 1vw;
 }
-
-
-/*------------------- Scoreboard */
-.scoreboard {
+.marcador {
     display: grid;
     grid-template-columns: 1fr .5fr .3fr .5fr 1fr ;
-    grid-template-areas: "user score1 puntos score2 cpu";
+    grid-template-areas: "usuario score1 puntos score2 robot";
     justify-items: center;
     align-items: center;
     text-align: center;
@@ -61,215 +49,107 @@ nav img {
     border-radius: 20px;
     background-color: rgba(255,255,255, .1);
 }
-
-.shadow {
+.sombra{
     -webkit-box-shadow: -10px 10px 13px 0px rgba(0,0,0,0.19);
     -moz-box-shadow: -10px 10px 13px 0px rgba(0,0,0,0.19);
     box-shadow: -10px 10px 13px 0px rgba(0,0,0,0.19);
 }
-
 .user-label img{width: 90px;}
 .pc-label img{width: 90px;}
 .user-label {
-    grid-area: user;
+    grid-area: usuario;
 }
-#my_score{grid-area: score1;}
+#user-score{grid-area: score1;}
 .puntos {grid-area: puntos;}
-#computer_score{grid-area: score2;}
-.pc-label{grid-area: cpu;}
+#pc-score{grid-area: score2;}
+.pc-label{grid-area: robot;}
 span{font-size: 5vw;}
 
-/* Game Section (Before selection)*/
-main{
+.result, .play {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    height: 350px;
-    margin: 0 auto;
-    position: relative;
-    width: 400px;
-  }
+    margin: 5vw 0;
+    font-size: 4vw;
+}
 
-  main::before{
-    background-image: url(../images/bg-triangle.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    content: '';
-    position: absolute;
-    top: 20%;
-    right: 15%;
-    height: 70%;
-    width:70%;
-    z-index: -1;
-  }
-
-  .btn-circle{
-    border: none;
-    border-radius: 50%;
-    box-shadow: inset 0 -5px rgba(0,0,0,0.15);
-    cursor: pointer;
-    margin: 0 25px;
-    height: 150px;
-    width: 150px;
-  }
-
-  .btn-circle:active{
-    transform: scale(0.9);
-  }
-
-  .wrapper{
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: inset 0 5px rgba(0,0,0,0.15);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 120px;
-    width: 120px;
-  }
-
-  .btn-paper{
-    background: linear-gradient(to bottom, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-  }
-
-  .btn-scissors{
-    background: linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-  }
-
-  .btn-rock{
-    background: linear-gradient(to bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-  }
-  
-
-  .btn-rules{
-    background: transparent;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 15px;
-    letter-spacing: 2px;
-    padding: 10px 25px;
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    text-transform: uppercase;
-  }
-
-/* Game Section (After selection) Needs to be change by selec*/ 
-.selection{
-    display: none;
-    grid-template-areas: "user result computer";
-    justify-content: space-between;
+.opcionesCpu{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
     align-items: center;
     text-align: center;
-    width: 800px;
-    max-width: 100%;
-    margin: 0 auto;
-  }
+    width: 50%;
+    margin: 2vw auto;
+}
+.opcionesCpu div{
+    border-radius: 20px;
+    border: 3px solid white;
+    background-color: rgba(255,255,255, .1);;
+}
+.opcionesCpu div:nth-of-type(1){
+    display: flex;
+    justify-self: left;
+}
+.opcionesCpu div:nth-of-type(3){
+    display: flex;
+    justify-self: right;
+}
 
-  .user_choice{
-    grid-area: user;
-  }
-  
-  .computer_choice{
-    grid-area: computer;
-  }
-  
-  .result-text{
-    grid-area: result;
-  }
-  
-   /* Needs to be change by selec*/
-  .selection h2{
-    font-size: 15px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-  
-  .selection h1{
-    font-size: 3rem;
-    letter-spacing: 2px;
-    margin: 0 0 20px;
-    text-transform: uppercase;
-  }
-  
-  .selection .btn-circle{
-    margin: 50px;
+.opcionesCpu div img{
+    width: 80px;
+    padding: 2vw;
+}
+
+
+
+.opciones{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    margin: 2vw auto;
+}
+.opciones div{
+    border-radius: 20px;
+    border: 3px solid white;
+    background-color: rgba(255,255,255, .1);;
+}
+.opciones div:nth-of-type(1){
+    display: flex;
+    justify-self: left;
+}
+.opciones div:nth-of-type(3){
+    display: flex;
+    justify-self: right;
+}
+.opciones div:hover{
     transform: scale(1.2);
-  }
-
-  /* Needs to be change by selec*/
-  
-  .btn-reset{
-    background-color: #fff;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    color: hsl(229, 25%, 31%);
-    font-family: inherit;
-    font-size: 12px;
-    letter-spacing: 2px;
-    padding: 10px 40px;
-    text-transform: uppercase;
-  }
-  
-  .btn-reset:hover{
-    color: red;
-  }
-
-  /* Rules Window */
-.rules-container{
-    position: fixed;
-    display: none;
-    top:0;
-    left: 0;
-    background-color: rgba(0,0,0,0.5);
-    height: 100vh;
-    width: 100vw;
-    z-index: -1;
-  }
-
-  .rules-modal{
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    display:none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    height: 450px;
-    width: 400px;
-    z-index: 2;
-  }
-  
-  .rules-modal button{
-    background-color: transparent;
-    border: none;
+    transition: 400ms all;
     cursor: pointer;
-    margin-top:80px;
-    transform: scale(1.5);
-  }
+}
+.opciones div img{
+    width: 80px;
+    padding: 2vw;
+}
 
-  footer{
-    text-align: center;
-    margin-top: 5%;
-  }
-  
+.btnSelDefault {
+    background: #49beb7;
+    border-radius: 20px;
+}
 
+.sel {
+    
+    border-radius: 20px;
+}
 
-/* Needs to be change by princ*/
 .principal{
     position: relative;
     display: flex;
     align-content: center;
 }
-
-.container {
+.contenedor {
     position: fixed;    
     text-align: center;
     width: 100%;
@@ -277,14 +157,13 @@ main{
     z-index: 999;
     padding-top: 12vw;    
 }
-
 .ocultar {
     display: none;
 }
-.container h1 {
+.contenedor h1 {
     font-size: 6vw;
 }
-.container form{
+.contenedor form{
     display: flex;
     flex-direction: column;
     width: 40%;
@@ -303,7 +182,6 @@ input, select, button{
     font-size: 1.4vw;
     color: white;
 }
-
 button{
     cursor: pointer;
     background-color: white;
@@ -316,25 +194,24 @@ option {
  background-color: rgba(255,255,255, .1);
 }
 
+
 .animated {
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+.animated2 {
     animation-duration: 2.5s;
     animation-fill-mode: both;
-    animation-iteration-count: infinite;
-  }
-.animated2 {
-      animation-duration: 2.5s;
-      animation-fill-mode: both;
-      animation-iteration-count: initial;
-  }
-  
+    animation-iteration-count: initial;
+}
 input:focus, input.form-control:focus, button:focus {
-      outline:none !important;
-      outline-width: 0 !important;
-      box-shadow: none;
-      -moz-box-shadow: none;
-      -webkit-box-shadow: none;
-  }
-
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
     40% {transform: translateY(-30px);}
@@ -353,28 +230,63 @@ animation-name: pulse;
 animation-duration: 1s;
 }
 
-@media screen and (max-width: 700px){
-    nav h1 {
 
-        font-size: 1em; 
-    }
-    .container,.choices{
+
+#btnRetry {
+    font-size: 2em;
+    text-align: center;
+    cursor: pointer;
+}
+
+#btnRetryDiv {
+    margin: 15px auto;
+    width: 512px;
+    text-align: center;
+    border: 3px solid #085f63;
+    border-radius: 10px;
+}
+
+#btnRetryDiv:hover {
+    background-color: #085f63;
+}
+
+.bannerShow {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+
+.bannerHide {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.2s, opacity 2s linear;
+}
+
+
+
+@media screen and (max-width: 700px){
+    .marcador,.opciones, .opcionesCpu{
         width: 90%;
         margin: 10vw auto; 
     }
-    .choice div img{
+
+    .opcionesCpu div img{
+        width: 60px;
+        padding: 1vw;
+    }
+    .opciones div img{
         width: 60px;
         padding: 1vw;
     }
     .user-label img{width: 70px;}
     .pc-label img{width: 70px;}
-    .container {
+    .contenedor {
         padding-top: 25vw;  
     }
-    .container h1 {
+    .contenedor h1 {
         font-size: 10vw;
     }
-    .container form{   
+    .contenedor form{   
         width: 80%;   
     }
     input, select, button{
@@ -383,32 +295,11 @@ animation-duration: 1s;
     ::-webkit-input-placeholder, button, select, option{
         font-size: 3vw; 
     }
+
+    #btnRetryDiv {
+        width: 80%;
+       
+    }
+
+
 }
-
-/* MOBILE VIEW */
-@media screen and (max-width:500px){
-    .scoreboard{
-      transform: scale(0.75);
-    }
- 
-    /* Needs to be change by selec*/
-    .selection{
-      display: none;
-      grid-template-areas: "user computer"
-                           "result result"
-    }
-  
-    .user_choice{
-      grid-area: user;
-    }
-  
-    .computer_choice{
-      grid-area: computer;
-    }
-  
-    .result-text{
-      grid-area: result;
-    }
-  }
-  
-
