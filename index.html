@@ -9,8 +9,8 @@
     <meta property="og:type" content="website">
     <meta property="og:description" content="El clásico juego de Piedra Papel y Tijera">
     <meta property="og:image" content="images/fondo.jpg">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="images/juego.png" type="image/x-icon">
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="shortcut icon" href="asset/images/game.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@300;500;700&display=swap" rel="stylesheet">
     <title>Piedra Papel Tijera</title>
 </head>
@@ -40,13 +40,13 @@
     </section>
     <header>
         <nav>
-         <img src="images/juego.png" alt="Juego"> 
+         <img src="asset/images/juego.png" alt="Juego"> 
          <h1> Piedra - Papel - Tijera </h1> 
         </nav>
      </header>
      <section class="marcador sombra">
-        <div id="user-label" class="user-label badge animated "><div id="img"><img src="images/man.png" alt="Man"></div> <h3 id="Usuario">Usuario</h3></div>
-        <div id="pc-label" class="pc-label badge animated"><img src="images/robot.png" alt="Robot"><h3>Robot</h3></div>
+        <div id="user-label" class="user-label badge animated "><div id="img"><img src="asset/images/man.png" alt="Man"></div> <h3 id="Usuario">Usuario</h3></div>
+        <div id="pc-label" class="pc-label badge animated"><img src="asset/images/robot.png" alt="Robot"><h3>Robot</h3></div>
         <span id="user-score">0 </span> <span class="puntos">:</span>
         <span id="pc-score">0</span>
     
@@ -54,13 +54,13 @@
 
     <section class="opcionesCpu">
         <div class="cpuResult sombra" id="rocaResult">
-            <a href="index.html"><img src="images/arrow2.png" alt="Back"></a>
+            <a href="index.html"><img src="asset/images/arrow2.png" alt="Back"></a>
         </div>
         <div class="choice sombra" id="papelResult">
-            <img id="IAimg" src="images/1.png" alt="cpuplayer">
+            <img id="IAimg" src="asset/images/1.png" alt="cpuplayer">
         </div>
         <div class="choice sombra" id="tijeraResult">
-            <img src="images/question.png" alt="Rules">
+            <img src="asset/images/question.png" alt="Rules">
         </div>
     </section>   
     <div class="result">
@@ -70,13 +70,13 @@
 
     <section class="opciones">
         <div class="choice sombra" id="roca" >
-            <img id="piedra" class="btnSelDefault" onclick="comprobarResultado('piedra')" src="images/1.png" alt="Roca">
+            <img id="piedra" class="btnSelDefault" onclick="comprobarResultado('piedra')" src="asset/images/1.png" alt="Roca">
         </div>
         <div class="choice sombra" id="papel">
-            <img id="papel" class="btnSelDefault" onclick="comprobarResultado('papel')" src="images/2.png" alt="Papel">
+            <img id="papel" class="btnSelDefault" onclick="comprobarResultado('papel')" src="asset/images/2.png" alt="Papel">
         </div>
         <div class="choice sombra" id="tijera">
-            <img id="tijeras" class="btnSelDefault" onclick="comprobarResultado('tijeras')" src="images/3.png" alt="Tijera">
+            <img id="tijeras" class="btnSelDefault" onclick="comprobarResultado('tijeras')" src="asset/images/3.png" alt="Tijera">
         </div>
     </section>
 	
