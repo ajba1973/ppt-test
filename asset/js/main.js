@@ -17,6 +17,9 @@ const scorePlayer = document.getElementById('user-score');
 
 const infoText = document.getElementById('infoText');
 const btnRetry = document.getElementById('btnRetryDiv');
+    const nombres = document.getElementById("nombre");
+    const generos = document.getElementById("genero");  
+    const colores = document.getElementById("color"); 
 
 function getData(){
     const nombres = document.getElementById("nombre").value;
@@ -36,9 +39,9 @@ function getData(){
 
 //Efecto de eleccion rival
 const imagenes = {
-    0: "./images/1.png",
-    1: "./images/2.png",
-    2: "./images/3.png",
+    0: "asset/images/1.png",
+    1: "asset/images/2.png",
+    2: "asset/images/3.png",
 }
 
 Object.size = function (obj) {
