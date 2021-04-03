@@ -17,9 +17,7 @@ const scorePlayer = document.getElementById('user-score');
 
 const infoText = document.getElementById('infoText');
 const btnRetry = document.getElementById('btnRetryDiv');
-    const nombres = document.getElementById("nombre");
-    const generos = document.getElementById("genero");  
-    const colores = document.getElementById("color"); 
+    
 
 function getData(){
     const nombres = document.getElementById("nombre").value;
