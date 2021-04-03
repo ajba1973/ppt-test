@@ -27,7 +27,7 @@ function getData(){
     if(nombres == ''){user_div.innerHTML = 'Usuario';}
     else{user_div.innerHTML = nombres;}
     if(generos == 'mujer'){img_div.innerHTML = '<img src="asset/images/woman.png" alt="Woman">';}
-    else{img_div.innerHTML = '<img src="images/man.png" alt="Man">';}
+    else{img_div.innerHTML = '<img src="asset/images/man.png" alt="Man">';}
     if(colores == 'rojo'){document.getElementById('body').classList.add('rojo');}
     else if(colores == 'negro'){document.getElementById('body').classList.add('negro');}
     else if(colores == 'morado'){document.getElementById('body').classList.add('morado');}
